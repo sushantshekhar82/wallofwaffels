@@ -29,13 +29,13 @@ import {
       <Box>
         <Flex
         //   bg={useColorModeValue('white', 'gray.800')}
-          color={useColorModeValue('gray.600', 'white')}
+          color={useColorModeValue('black', 'black')}
           minH={'60px'}
           py={{ base: 2 }}
           px={{ base: 4 }}
           borderBottom={1}
         //   borderStyle={'solid'}
-          borderColor={useColorModeValue('gray.200', 'gray.900')}
+          borderColor={useColorModeValue('black', 'black')}
           justifyContent={'center'}
           alignItems={'center'}
           >
@@ -57,7 +57,7 @@ import {
             <Text
               textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
               fontFamily={'heading'}
-              color={useColorModeValue('gray.800', 'white')}
+              color={useColorModeValue('black', 'black')}
               mr={150}>
               Logo
             </Text>
@@ -78,12 +78,12 @@ import {
   }
   
   const DesktopNav = () => {
-    const linkColor = useColorModeValue('gray.600', 'gray.200');
-    const linkHoverColor = useColorModeValue('gray.800', 'white');
-    const popoverContentBgColor = useColorModeValue('white', 'gray.800');
+    const linkColor = useColorModeValue('black', 'black');
+    const linkHoverColor = useColorModeValue('#FE7005', '#FE7005');
+    const popoverContentBgColor = useColorModeValue('black', 'black');
   
     return (
-      <Stack direction={'row'} spacing={4}>
+      <Stack direction={'row'} spacing={4} zIndex={1}>
         {NAV_ITEMS.map((navItem) => (
           <Box key={navItem.label}>
             <Popover trigger={'hover'} placement={'bottom-start'}>
@@ -96,6 +96,7 @@ import {
                   _hover={{
                     textDecoration: 'none',
                     color: linkHoverColor,
+                    borderBottom:'2px solid #FE7005'
                   }}
                   className='navbar'
                   >
@@ -133,7 +134,7 @@ import {
         display={'block'}
         p={2}
         rounded={'md'}
-        _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}>
+        _hover={{ bg: useColorModeValue('black', 'back') }}>
         <Stack direction={'row'} align={'center'}>
           <Box>
             <Text
@@ -162,7 +163,7 @@ import {
   const MobileNav = () => {
     return (
       <Stack
-        bg={useColorModeValue('white', 'gray.800')}
+        bg={useColorModeValue('white', 'white')}
         p={4}
         display={{ md: 'none' }}>
         {NAV_ITEMS.map((navItem) => (
@@ -185,10 +186,13 @@ import {
           align={'center'}
           _hover={{
             textDecoration: 'none',
-          }}>
+            color:'#FE7005'
+          }}
+          
+          >
           <Text
             fontWeight={600}
-            color={useColorModeValue('gray.600', 'gray.200')}>
+            color={useColorModeValue('black', 'black')}>
             {label}
           </Text>
           {children && (
@@ -208,7 +212,7 @@ import {
             pl={4}
             borderLeft={1}
             borderStyle={'solid'}
-            borderColor={useColorModeValue('gray.200', 'gray.700')}
+            borderColor={useColorModeValue('black', 'black')}
             align={'start'}>
             {children &&
               children.map((child) => (
@@ -225,42 +229,30 @@ import {
  
   
   const NAV_ITEMS = [
+    
     {
-      label: 'Inspiration',
-      children: [
-        {
-          label: 'Explore Design Work',
-          subLabel: 'Trending Design to inspire you',
-          href: '#',
-        },
-        {
-          label: 'New & Noteworthy',
-          subLabel: 'Up-and-coming Designers',
-          href: '#',
-        },
-      ],
-    },
-    {
-      label: 'Find Work',
-      children: [
-        {
-          label: 'Job Board',
-          subLabel: 'Find your dream design job',
-          href: '#',
-        },
-        {
-          label: 'Freelance Projects',
-          subLabel: 'An exclusive list for contract work',
-          href: '#',
-        },
-      ],
-    },
-    {
-      label: 'Learn Design',
+      label: 'Home',
       href: '#',
     },
     {
-      label: 'Hire Designers',
+      label: 'About Us',
       href: '#',
     },
+    {
+      label: 'Our Products',
+      href: '#',
+    },
+    {
+      label: 'Gallery',
+      href: '#',
+    },
+    {
+      label: 'Franchise',
+      href: '#',
+    },
+    {
+      label: 'Contact Us',
+      href: '#',
+    }
+
   ];
